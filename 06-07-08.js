@@ -9,9 +9,12 @@ function crearClasePersona() {
     constructor(nombre, edad, hobbies, amigos) {
       // El constructor de la clase Persona recibe nombre (string), edad (integer), hobbies (array de strings), amigos (array de objetos)
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
-
+       
       // Tu código aca:
-
+      this.nombre = nombre;
+      this.edad = edad;
+      this.hobbies = hobbies;
+      this.amigos = amigos;
     }
 
     addFriend(nombre, edad) {
@@ -20,7 +23,8 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
-
+      var nuevosamigos = {nombre, edad};
+      this.amigos.push(nuevosamigos);
     }
 
     addHobby(hobby) {
@@ -28,6 +32,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+      this.hobbies.push(hobby);
 
     }
     getFriends() {
@@ -38,7 +43,10 @@ function crearClasePersona() {
       // persona.getFriends() debería devolver ['martin', 'toni']
 
       // Tu código aca:
-
+      var nuevoarray = this.amigos.map(function (elemento){
+        return elemento.nombre;
+      })
+      return nuevoarray;
     }
 
     getHobbies() {
@@ -47,7 +55,10 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
-
+      var jobis = this.hobbies.map(function (elemento){
+        return elemento;
+      })
+      return jobis;
     }
 
     getPromedioEdad() {
@@ -66,7 +77,14 @@ function crearClasePersona() {
       // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
 
       // Tu código aca:
-
+       var promedio = this.amigos.map(function (elemento){
+        return elemento.edad;
+       })
+       var acc = 0;
+       for(var i = 0; i < promedio.length; i++){
+         acc = acc + promedio[i];
+       }
+       return acc/this.amigos.length;
     }
   };
 
