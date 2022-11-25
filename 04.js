@@ -13,17 +13,7 @@ function numeroSimetrico(num) {
   // numeroSimetrico(11711) devuelve true
 
   // Tu código:
-  var numero = String(num);
-  var inverso = "";
-  for(var i = numero.length-1; i >= 0; i--){
-    inverso = inverso + numero[i];
-  }
-  if(numero === inverso){
-    return true;
-  }
-  else{
-    return false;
-  }
+
 }
 
 // No modifiques nada debajo de esta linea //
